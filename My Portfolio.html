@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohit Singh's Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1d1d1d; /* Dark background */
+            color: #fff;
+        }
+
+        header {
+            background-color: #3498db; /* Blue header */
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 1em;
+            background-color: #292929; /* Dark grey content background */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row; /* Align content and image in a row */
+            align-items: center;
+        }
+
+        .content {
+            flex: 1; /* Take up remaining space */
+            padding-right: 20px; /* Add some space between content and image */
+            transform: translateY(0); /* Keep the content static */
+        }
+
+        h1, h2 {
+            color: #fff; /* White text */
+        }
+
+        p {
+            line-height: 1.6;
+            color: #ccc; /* Light grey text */
+        }
+
+        a {
+            color: #3498db; /* Blue links */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight {
+            background-color: #f39c12; /* Orange highlight */
+            padding: 0.2em;
+            border-radius: 5px;
+            color: #fff;
+            transform: translateY(0); /* Keep them static */
+        }
+
+        .highlight:hover {
+            background-color: #bc780b;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin: 20px 0;
+            transition: transform 0.5s ease-in-out; /* Adding a smooth transform animation */
+        }
+
+        img:hover {
+            transform: scale(1.1); /* Scale up on hover */
+        }
+
+        .contact-button {
+            display: inline-block;
+            background-color: #4caf50; /* Green button color */
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .contact-button:hover {
+            background-color: #3b8a3e; /* Darker green on hover */
+        }
+
+        footer {
+            background-color: #292929; /* Dark grey footer */
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 999; /* Make sure it's above other elements */
+            transform: translateY(100%);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* Additional styles to hide the footer at the end of the page */
+        body::after {
+            content: "";
+            display: block;
+            height: 50px; /* Adjust the height based on your footer height */
+        }
+
+        footer a {
+            color: #3498db; /* Blue links in the footer */
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rohit Singh's Portfolio</h1>
+        <p>Welcome to the digital carnival of curiosity and code!</p>
+    </header>
+
+    <section>
+        <div class="content">
+            <h2>About Me</h2>
+            <p>Hello world! I'm Rohit Singh, a SEE graduate from the enchanting Ellaine Memorial School. I emerged from the grade 10 crucible with a diploma in daring and a degree in daydreaming.</p>
+            <p>As the former captain of the academic ship, I sailed through stormy exams like a scholarly pirate, always on the lookout for the treasure trove of knowledge. Kathmandu Model Secondary School became my academic carnival for +2, and there, amidst the rollercoaster of classes, I found my true love—the math club! Picture me with a cape, solving equations faster than a speeding calculator.</p>
+            <p>But wait, there's more! The coding chronicles unfolded, turning me into a digital wizard. Lines of code became my spells, turning caffeine into programs and bugs into elusive magical creatures.</p>
+            <p>So, grab your virtual popcorn, hop on the code-coaster, and join me in this pixelated party. From SEE shenanigans to +2 adventures, this is Rohit Singh's journey—where grades are just numbers, and laughter is the best algorithm! 🚀🤓</p>
+            <a href="#projects" class="highlight">Explore My Projects</a>
+            <br>
+            <a href="https://www.facebook.com/profile.php?id=100080088500333" target="_blank" class="contact-button">Connect on Facebook</a>
+        </div>
+        <img src="profile.jpg" alt="Profile Pic">
+    </section>
+
+    <section id="projects">
+        <h2>Upcoming Projects</h2>
+        <p>Prepare for the wonders of my digital creations:</p>
+        <ul>
+            <li><strong>MathMindscape:</strong> A virtual haven for math enthusiasts to explore the beauty of numbers.</li>
+            <li><strong>Coding Chronicles:</strong> Tales from the coding realm, where bugs become legendary creatures.</li>
+            <li><strong> CyberDoc Carnival:</strong> Step right up to the future of medicine—where pixels prescribe laughter and wellness.</li>
+            <!-- Later we can add more projects as needed -->
+        </ul>
+    </section>
+
+    <!--Place To add more sections for skills, experience, etc. -->
+
+    <footer>
+        <p>Connect with me at <a href="mailto:rohitsingh759345@gmail.com">rohitsingh759345@gmail.com</a></p>
+        <p>Follow me on Twitter: <a href="https://twitter.com/RohitSingh87066" >@RohitSingh87066</a></p>
+    </footer>
+
+    <script>
+        // Add script to handle footer visibility
+        window.addEventListener('scroll', function() {
+            let footer = document.querySelector('footer');
+            let bodyHeight = document.body.scrollHeight;
+            let windowHeight = window.innerHeight;
+            let scrollPosition = window.scrollY;
+
+            // Calculate the remaining space until the end of the page
+            let remainingSpace = bodyHeight - (windowHeight + scrollPosition);
+
+            // Adjust the visibility based on the remaining space
+            footer.style.transform = 'translateY(' + remainingSpace + 'px)';
+
+            // Keep the highlight and contact-button fixed
+            let highlight = document.querySelector('.highlight');
+            let contactButton = document.querySelector('.contact-button');
+            highlight.style.transform = 'translateY(0)';
+            contactButton.style.transform = 'translateY(0)';
+        });
+    </script>
+</body>
+</html>
